@@ -25,3 +25,7 @@ $SED -i -e "s@VAGRANT_SWIFT_IP@$VAGRANT_SWIFT_IP@g" -e "s@VAGRANT_TENANT_ID@$VAG
 # Load Pydio database
 /bin/mysql pydiodb </usr/share/puppet/modules/openiosds/profiles/vagrant-ext-pydio/conf/pydiodb.sql
 
+# Initialize the demo container
+/usr/bin/yum -y install python-swiftclient
+/usr/bin/swift post demo
+
